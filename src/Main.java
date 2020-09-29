@@ -14,25 +14,32 @@ public class Main {
         run();
     }
 
-    // Create a class constructor for the Main class
+    /**
+     * Run method
+     * Exception free
+     */
     static void run() {
-        // Creat a instance of
+        // Instance of AnimalHotel
         AnimalHotel animalHotel = new AnimalHotel();
+        try {
+            String inputParam = showInputDialog("Which one will get food?\n" +
+                    "(Venus,Ove,Sixten,Dogge,Hypno)");
+            while (true) {
+                Animal animal = animalHotel.getAnimal(inputParam);
+                if (animal != null) {
+                    showMessageDialog(null, "You will give " + animal.getName() + " "
+                            + animal.getAmountOfFood() + " gram "
+                            + animal.getRightFood().toString() + " !");
+                    //System.out.println(animal.toString()); Test code
+                    break;
+                } else {
+                    inputParam = showInputDialog("Please write their right names." +
+                            "\n(Venus,Ove,Sixten,Dogge,Hypno)");
+                }
 
-        String inputParam = showInputDialog("Which one will get food?\n" +
-                "(Venus,Ove,Sixten,Dogge,Hypno)");
-        while (true) {
-            Animal animal = animalHotel.getAnimal(inputParam);
-            if (animal != null) {
-                showMessageDialog(null, "You will give " + animal.getName() + " "
-                        + animal.getAmountOfFood() + " gram "
-                        + animal.getRightFood().toString() + " !");
-                //System.out.println(animal.toString()); Test code
-                break;
-            } else {
-                inputParam = showInputDialog("Please write their right names." +
-                        "\n(Venus,Ove,Sixten,Dogge,Hypno)");
             }
+        } catch (Exception e) {
+            showMessageDialog(null, "HEJ DÅ");
         }
     }
 }

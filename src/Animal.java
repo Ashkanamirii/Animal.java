@@ -17,7 +17,6 @@ public class Animal implements IFood, IAmountOfFood {
         this.name = name;
         this.weight = weight;
     }
-
     public String getName() {
         return name;
     }
@@ -31,7 +30,8 @@ public class Animal implements IFood, IAmountOfFood {
     public double getAmountOfFood() {
         return weightOfFood;
     }
-/**
+
+/*** ******TEST CODE********
     @Override
     public String toString() {
         return "Animal{" +

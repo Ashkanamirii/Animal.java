@@ -6,6 +6,6 @@
  * Copyright: MIT
  */
 public interface IFood {
-    // Abstract method
+    // Abstract method,
     FoodType getRightFood();
 }

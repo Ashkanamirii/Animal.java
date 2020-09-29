@@ -10,10 +10,10 @@ import java.util.List;
  */
 public class AnimalHotel {
 
-    // Create a class constructor for the Animal class
     public List<Animal> getListOfAnimal() {
         List<Animal> animalList = new ArrayList<>();
-        Animal c1 = new Cat("Venus", 5000);
+
+        Cat c1 = new Cat("Venus", 5000);
         Animal c2 = new Cat("Ove", 3000);
 
         Animal d1 = new Dog("Sixten", 5000);
@@ -28,6 +28,7 @@ public class AnimalHotel {
         animalList.add(d2);
 
         animalList.add(s);
+
         return animalList;
     }
 
