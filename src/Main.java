@@ -22,16 +22,27 @@ public class Main {
         // Instance of AnimalHotel
         AnimalHotel animalHotel = new AnimalHotel();
         try {
-            String inputParam = showInputDialog("Which one will get food?\n" +
-                    "(Venus,Ove,Sixten,Dogge,Hypno)");
-            while (true) {
+            boolean count = true;
+            while (count) {
+                String inputParam = showInputDialog("Which one will get food?\n" +
+                        "(Venus,Ove,Sixten,Dogge,Hypno)");
+                if (inputParam == null)
+                    System.exit(0);
                 Animal animal = animalHotel.getAnimal(inputParam);
                 if (animal != null) {
+                    double amountofFood = animal.getRightFood();
                     showMessageDialog(null, "You will give " + animal.getName() + " "
-                            + animal.getAmountOfFood() + " gram "
-                            + animal.getRightFood().toString() + " !");
-                    //System.out.println(animal.toString()); Test code
-                    break;
+                            + amountofFood + " gram "
+                            + animal.typeOfFood + " !");
+
+                    System.out.println(animal.typeOfFood); //test code
+                    System.out.println(amountofFood); // test code
+
+                    String s = showInputDialog("If you want continue write 'Y' or 'y' ");
+                    if (s == null)
+                        System.exit(0);
+                    if (!s.equals("Y") && !s.equals("y"))
+                        count = false;
                 } else {
                     inputParam = showInputDialog("Please write their right names." +
                             "\n(Venus,Ove,Sixten,Dogge,Hypno)");
@@ -39,7 +50,7 @@ public class Main {
 
             }
         } catch (Exception e) {
-            showMessageDialog(null, "HEJ DÅ");
+            System.out.println(e.getMessage());
         }
     }
 }

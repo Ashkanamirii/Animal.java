@@ -6,32 +6,44 @@
  * Copyright: MIT
  */
 
-public class Animal implements IFood, IAmountOfFood {
+public class Animal implements IFood {
     private String name;
     private double weight;
     protected FoodType typeOfFood;
     protected double weightOfFood;
+
+    public Animal(){} //test code
 
     // Create a class constructor for the Animal class
     public Animal(String name, double weight) {
         this.name = name;
         this.weight = weight;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
     public String getName() {
         return name;
     }
-
-    @Override
-    public FoodType getRightFood() {
-        return typeOfFood;
+// polymorphism and interface
+    public double getRightFood() {
+         return weightOfFood;
     }
 
-    @Override
-    public double getAmountOfFood() {
-        return weightOfFood;
-    }
 
-/*** ******TEST CODE********
+
+
+/* ******TEST CODE********
     @Override
     public String toString() {
         return "Animal{" +

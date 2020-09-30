@@ -13,16 +13,23 @@ public class AnimalHotel {
     public List<Animal> getListOfAnimal() {
         List<Animal> animalList = new ArrayList<>();
 
-        Cat c1 = new Cat("Venus", 5000);
+        Animal c1 = new Cat("Venus", 5000);
         Animal c2 = new Cat("Ove", 3000);
-
         Animal d1 = new Dog("Sixten", 5000);
         Animal d2 = new Dog("Dogge", 10000);
-
         Animal s = new Snake("Hypno", 1000);
+
+/*Test code
+        Animal c3 = new Cat();
+        c3.setName("CAT");
+        c3.setWeight(4000);
+        animalList.add(c3);
+        System.out.println(c3.toString());
+ */
 
         animalList.add(c1);
         animalList.add(c2);
+
 
         animalList.add(d1);
         animalList.add(d2);

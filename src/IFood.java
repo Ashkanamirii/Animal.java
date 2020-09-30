@@ -7,5 +7,5 @@
  */
 public interface IFood {
     // Abstract method,
-    FoodType getRightFood();
+    double getRightFood();
 }

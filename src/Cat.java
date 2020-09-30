@@ -6,11 +6,17 @@
  * Copyright: MIT
  */
 public class Cat extends Animal {
+    /* public Cat(){
+        typeOfFood = FoodType.CATFOOD;
+    }*/ //TEST CODE
+
     // Create a class constructor for the Cat class
     public Cat(String name, double weight) {
         super(name, weight);
         typeOfFood = FoodType.CATFOOD;
-        weightOfFood = Math.round(weight / FoodType.CATFOOD.dividedBy());
-
+    }
+    public double getRightFood() {
+        weightOfFood = Math.round(this.getWeight() / typeOfFood.dividedBy());
+        return weightOfFood;
     }
 }

@@ -7,9 +7,13 @@
  */
 public class Snake extends Animal {
     // Create a class constructor for the Snake class
-    public Snake(String name,double weight){
-        super(name,weight);
+    public Snake(String name, double weight) {
+        super(name, weight);
         typeOfFood = FoodType.SNAKEFOOD;
-        weightOfFood =  FoodType.SNAKEFOOD.dividedBy();
+    }
+
+    public double getRightFood() {
+        weightOfFood = Math.round(this.getWeight());
+        return weightOfFood;
     }
 }
